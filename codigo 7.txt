@@ -1,0 +1,34 @@
+class Poligono:
+    def __init__(self, numero_lados):
+        self.numero_lados = numero_lados
+
+    def get_numero_lados(self):
+        return self.numero_lados
+
+    def set_numero_lados(self, novo_numero_lados):
+        self.numero_lados = novo_numero_lados
+
+    def calcular_perimetro(self):
+        perimetro = 0
+        for _ in range(self.numero_lados):
+            lado = float(input("Digite o valor do lado: "))
+            perimetro += lado
+        print(f"O perímetro do polígono é: {perimetro}")
+
+class TestarPoligono:
+    def __init__(self):
+        pass
+
+    def main(self):
+        num_lados = int(input("Digite o número de lados do polígono: "))
+        poligono = Poligono(num_lados)
+
+        poligono.calcular_perimetro()
+
+        novo_num_lados = int(input("Digite o novo número de lados: "))
+        poligono.set_numero_lados(novo_num_lados)
+        poligono.calcular_perimetro()
+
+if __name__ == "__main__":
+    teste = TestarPoligono()
+    teste.main()
